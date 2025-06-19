@@ -375,7 +375,7 @@ async function generateMessage(messageId: number, type: 'userInput' | 'incomingM
 
     let displayText = response;
     if (selectedPreset.filterCodeBlock) {
-      const codeBlockMatch = response.match(/^(?:[^`]*?)\n?|||[\s\S]*?\n([\s\S]*?)|||(?![^`]*|||)/);
+      const codeBlockMatch = response.match(/^(?:[^`]*?)\n?```[\s\S]*?\n([\s\S]*?)```(?![^`]*```)/);
       if (codeBlockMatch) {
         displayText = codeBlockMatch[1].trim();
       }
